@@ -211,10 +211,13 @@ class Bot:
         tiles = []
         for tile_idx, tile_count in enumerate(self.player_state.tehai):
             if tile_count and tile_idx == 4 and self.akas_in_hand[0]:
+                ms += [f"{tile_idx + 1}m"] * (tile_count-1)
                 akas.append("5mr")
             elif tile_count and tile_idx == 4 + 9 and self.akas_in_hand[1]:
+                ms += [f"{tile_idx + 1}p"] * (tile_count-1)
                 akas.append("5pr")
             elif tile_count and tile_idx == 4 + 18 and self.akas_in_hand[2]:
+                ms += [f"{tile_idx + 1}s"] * (tile_count-1)
                 akas.append("5sr")
             elif tile_count and tile_idx < 9:
                 ms += [f"{tile_idx + 1}m"] * tile_count
